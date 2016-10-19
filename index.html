@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="filterApp">
+<head>
+	<title>This is Filter Page</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src=app.js></script>
+</head>
+	<body ng-controller="filterController">
+
+			<div class="container">
+				<div>
+					Enter your name here 
+					<input type="text" ng-model="name">			
+				</div>	
+				<div>
+					{{name}} : {{statement}}
+				</div>
+				<div>
+					<button name="Rich" ng-click="showMoney()">Rich</button>
+					{{cost | currency : 'Rs ' : 2}}
+					<br>
+					{{money | uppercase}}
+					<br>
+					
+				</div>
+			</div>
+	</body>
+</html>
