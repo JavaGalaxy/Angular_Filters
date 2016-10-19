@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="filterApp">
+<head>
+	<title>This is custom filter App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src=filterApp.js></script>
+</head>
+<body ng-controller="filterController">
+		<div class="container">
+			{{name}}
+			<input type="text" name="" ng-model="lastName">{{lastName | uppercase}}
+
+		</div>
+
+</body>
+</html>
