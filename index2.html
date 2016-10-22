@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Filter with Arguments as input</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src=filterApp2.js></script>
+</head>
+<body ng-app="FilterApp2">
+
+		<div class="container" ng-controller="FilterController2">
+
+				Origninal : {{sayMessage()}} <br>
+				Duplicate : {{sayNewMessage()}} <br>
+
+				Truth : {{ sayMessage() | truth : 'original' : 'ternary' }} <br>
+
+				BIG TRUTH : {{ sayMessage() | truth : 'original' : 'ternary' | uppercase}} <br>
+		</div>
+
+</body>
+</html>

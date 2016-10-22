@@ -1,17 +1,41 @@
 ( function () {
 
-	angular.module('filterApp', [])
+	angular.module('FilterApp', [])
 
-	.controller('filterController', filterController);
+	.controller('FilterController', FilterController)
+	.filter('loves', lovesFilter);						 /** Filter gets registered here**/
 
-	filterController.inject = ['$scope', '$filter'];
+	FilterController.$inject = ['$scope', 'lovesFilter'];
 
-function filterController($scope, $filter) {
+/** Controller Begins **/
+	function FilterController($scope, lovesFilter) {
 
 		var msg = "This is how filter works";
-		$scope.name =$filter('uppercase') (msg);
-		$scope.lastName = "bond";
+
+		$scope.sayMessage = function() {
+
+		var msg = "Amogh likes to do Yoga !";
+		return msg;
+
+		}
+
+		$scope.sayLovesMessage = function() {
+			var msg = "Amogh likes to do Yoga !";
+			msg = lovesFilter(msg);
+			return msg;
+		}
+
 	}
- 
-}
-)()
+/** Controller Ends**/
+
+/** Filter Function without custom Arguments **/
+	function lovesFilter() {
+
+		return function (input) {
+			input = input || "";
+			input = input.replace("likes", "loves");
+			return input;
+		};
+	}
+
+})()
